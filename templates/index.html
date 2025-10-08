@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Shortlister Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Animated Background Elements -->
+        <div class="background-elements">
+            <div class="bg-element bg-element-1"></div>
+            <div class="bg-element bg-element-2"></div>
+            <div class="bg-element bg-element-3"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="container">
+                <!-- Enhanced Header -->
+                <header class="app-header">
+                    <div class="logo-container">
+                        <div class="logo-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                    </div>
+                    <div class="header-content">
+                        <h1 class="main-title">
+                            Resume Shortlister
+                            <span class="pro-badge">
+                                <i class="fas fa-star"></i>
+                                Pro Edition
+                            </span>
+                        </h1>
+                        <p class="subtitle">
+                            Transform your hiring process with AI-powered resume analysis, intelligent scoring, and automated candidate shortlisting
+                        </p>
+                    </div>
+                    <!-- Feature Pills -->
+                    <div class="feature-pills">
+                        <div class="feature-pill">
+                            <i class="fas fa-bolt"></i>
+                            <span>AI-Powered</span>
+                        </div>
+                        <div class="feature-pill">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure</span>
+                        </div>
+                        <div class="feature-pill">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </div>
+                        <div class="feature-pill">
+                            <i class="fas fa-clock"></i>
+                            <span>Real-time</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Main Interface Card -->
+                <div class="main-card">
+                    <!-- Tab Navigation -->
+                    <div class="tab-navigation">
+                        <button class="tab-button active" data-tab="upload">
+                            <i class="fas fa-upload"></i>
+                            Upload
+                        </button>
+                        <button class="tab-button" data-tab="configure">
+                            <i class="fas fa-cog"></i>
+                            Configure
+                        </button>
+                        <button class="tab-button" data-tab="results">
+                            <i class="fas fa-chart-bar"></i>
+                            Results
+                        </button>
+                    </div>
+
+                    <!-- Upload Tab -->
+                    <div class="tab-content active" id="upload-tab">
+                        <div class="tab-header">
+                            <h2>Upload Resume Files</h2>
+                            <p>Drag and drop multiple resume files or click to browse</p>
+                        </div>
+                        <!-- Drag & Drop Area -->
+                        <div class="upload-area" id="upload-area">
+                            <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx" hidden>
+                            <div class="upload-content">
+                                <div class="upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="upload-text">
+                                    <h3>Drop your resume files here</h3>
+                                    <p>Supports PDF, DOC, and DOCX formats up to 10MB each</p>
+                                    <button class="browse-btn" onclick="document.getElementById('file-input').click()">
+                                        <i class="fas fa-upload"></i>
+                                        Browse Files
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- File List -->
+                        <div class="file-list-container" id="file-list-container" style="display: none;">
+                            <div class="file-list-header">
+                                <h3>
+                                    <i class="fas fa-file-text"></i>
+                                    Uploaded Files (<span id="file-count">0</span>)
+                                </h3>
+                                <button class="clear-all-btn" id="clear-all-btn">
+                                    <i class="fas fa-trash"></i>
+                                    Clear All
+                                </button>
+                            </div>
+                            <div class="file-list" id="file-list"></div>
+                        </div>
+                    </div>
+
+                    <!-- Configure Tab -->
+                    <div class="tab-content" id="configure-tab">
+                        <div class="tab-header">
+                            <h2>Processing Configuration</h2>
+                            <p>Set your job requirements and scoring criteria</p>
+                        </div>
+                        <div class="config-grid">
+                            <div class="config-card">
+                                <div class="config-header">
+                                    <div class="config-icon job-role-icon">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <label class="config-label">Job Role</label>
+                                        <p class="config-description">Select the position you're hiring for</p>
+                                    </div>
+                                </div>
+                                <select class="config-select" id="job-role">
+                                    <option value="">Choose a job role...</option>
+                                    <option value="ai_engineer">AI Engineer</option>
+                                    <option value="ml_engineer">ML Engineer</option>
+                                    <option value="frontend_developer">Frontend Developer</option>
+                                    <option value="data_analyst">Data Analyst</option>
+                                    <option value="python_developer">Python Developer</option>
+                                </select>
+                            </div>
+                            <div class="config-card">
+                                <div class="config-header">
+                                    <div class="config-icon score-icon">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div>
+                                        <label class="config-label">Score Threshold</label>
+                                        <p class="config-description">Minimum score for qualification</p>
+                                    </div>
+                                </div>
+                                <input type="number" class="config-input" id="min-score" min="0" max="100" value="75">
+                                <div class="score-labels">
+                                    <span>Low (0-50)</span>
+                                    <span>Medium (51-75)</span>
+                                    <span>High (76-100)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="process-section">
+                            <button class="process-btn" id="process-btn" disabled>
+                                <i class="fas fa-play"></i>
+                                Start Processing (<span id="process-count">0</span> files)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results Tab -->
+                    <div class="tab-content" id="results-tab">
+                        <!-- Processing State -->
+                        <div class="processing-state" id="processing-state" style="display: none;">
+                            <div class="processing-icon">
+                                <div class="spinner"></div>
+                            </div>
+                            <div class="processing-text">
+                                <h3>Processing Resumes...</h3>
+                                <p>Analyzing candidates and calculating scores</p>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill"></div>
+                                </div>
+                                <p class="progress-text"><span id="progress-percent">0</span>% Complete</p>
+                            </div>
+                        </div>
+                        <!-- Results State -->
+                        <div class="results-state" id="results-state" style="display: none;">
+                            <!-- Stats Cards -->
+                            <div class="stats-grid">
+                                <div class="stat-card total-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-number" id="total-resumes">0</div>
+                                        <div class="stat-label">Total Resumes</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card qualified-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-number" id="qualified-count">0</div>
+                                        <div class="stat-label">Qualified</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card average-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-trending-up"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-number" id="average-score">0</div>
+                                        <div class="stat-label">Avg Score</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Send Emails Button -->
+                            <div class="send-emails-section" style="text-align:center; margin: 20px 0;">
+                                <button class="action-btn" id="send-emails-btn">
+                                    <i class="fas fa-envelope"></i>
+                                    Send Batch Emails to Qualified Candidates
+                                </button>
+                                <div id="send-emails-status" style="margin-top:10px;"></div>
+                            </div>
+                            <!-- Results List -->
+                            <div class="results-section">
+                                <div class="results-header">
+                                    <h3>Candidate Results</h3>
+                                    <div class="results-actions">
+                                        <button class="action-btn">
+                                            <i class="fas fa-filter"></i>
+                                            Filter
+                                        </button>
+                                        <button class="action-btn">
+                                            <i class="fas fa-download"></i>
+                                            Export
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="results-list" id="results-list"></div>
+                            </div>
+                        </div>
+                        <!-- Empty State -->
+                        <div class="empty-state" id="empty-state">
+                            <div class="empty-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>No Results Yet</h3>
+                            <p>Upload resumes and configure settings to see results</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enhanced Footer -->
+                <footer class="app-footer">
+                    <div class="footer-features">
+                        <div class="footer-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Enterprise Security</span>
+                        </div>
+                        <div class="footer-feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>AI-Powered</span>
+                        </div>
+                        <div class="footer-feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Real-time Processing</span>
+                        </div>
+                    </div>
+                    <p class="footer-copyright">© 2024 Resume Shortlister Pro. All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

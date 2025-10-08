@@ -1,0 +1,93 @@
+{
+  "ai_engineer": {
+    "title": "AI Engineer",
+    "summary": "This is a full-time on-site role for an AI Engineer in Hyderabad.",
+    "responsibilities": [
+      "Develop, test, and deploy machine learning models and algorithms.",
+      "Implement and maintain machine learning pipelines.",
+      "Collaborate with data scientists, software engineers, and product managers.",
+      "Identify and prioritize business problems and provide optimized solutions."
+    ],
+    "qualifications": [
+      "B.E/BTech/ME/MTech in Engineering with 2-4 years of AI research experience.",
+      "Strong proficiency in Python, ML, Generative AI.",
+      "Experience with decision trees, random forests, gradient boosting, and deep learning.",
+      "Expertise in NLP, Computer Vision, LLM, TensorFlow, NumPy, OpenCV, NLTK, Pandas.",
+      "Knowledge of Generative AI, Prompt Engineering.",
+      "Strong grasp of Algorithms, Data Structures, Statistics, and Math.",
+      "Experience with software development, version control, and CI/CD."
+    ]
+  },
+  "ml_engineer": {
+    "title": "ML Engineer",
+    "summary": "This is a full-time on-site role for a Machine Learning Engineer.",
+    "responsibilities": [
+      "Design and implement machine learning models and algorithms.",
+      "Build scalable ML pipelines and infrastructure.",
+      "Collaborate with data scientists and engineers to deploy ML solutions.",
+      "Optimize model performance and ensure production readiness."
+    ],
+    "qualifications": [
+      "Bachelor's degree in Computer Science, Statistics, or related field.",
+      "3+ years of experience in machine learning and data science.",
+      "Proficiency in Python, TensorFlow, PyTorch, and scikit-learn.",
+      "Experience with big data technologies (Spark, Hadoop).",
+      "Knowledge of cloud platforms (AWS, GCP, Azure) and MLOps.",
+      "Strong understanding of statistics, linear algebra, and calculus."
+    ]
+  },
+  "frontend_developer": {
+    "title": "Frontend Developer",
+    "summary": "This is a full-time on-site role for a Frontend Developer.",
+    "responsibilities": [
+      "Develop and maintain user interfaces using React, JavaScript, HTML, and CSS.",
+      "Collaborate with designers and backend developers to deliver seamless user experiences.",
+      "Optimize applications for maximum speed and scalability.",
+      "Ensure the technical feasibility of UI/UX designs."
+    ],
+    "qualifications": [
+      "Bachelor's degree in Computer Science or related field.",
+      "2+ years of experience in frontend development.",
+      "Proficiency in React, JavaScript, HTML5, and CSS3.",
+      "Experience with responsive and adaptive design.",
+      "Familiarity with RESTful APIs and version control (Git).",
+      "Knowledge of modern build tools and workflows (Webpack, Babel, npm)."
+    ]
+  },
+  "data_analyst": {
+    "title": "Data Analyst",
+    "summary": "This is a full-time on-site role for a Data Analyst.",
+    "responsibilities": [
+      "Collect, clean, and analyze large datasets to extract meaningful insights.",
+      "Create visualizations and reports to communicate findings to stakeholders.",
+      "Develop and maintain dashboards for business intelligence.",
+      "Collaborate with cross-functional teams to support data-driven decisions."
+    ],
+    "qualifications": [
+      "Bachelor's degree in Statistics, Mathematics, Economics, or related field.",
+      "2+ years of experience in data analysis or business intelligence.",
+      "Proficiency in SQL, Python, and data visualization tools (Tableau, Power BI).",
+      "Experience with statistical analysis and hypothesis testing.",
+      "Strong analytical and problem-solving skills.",
+      "Excellent communication and presentation abilities."
+    ]
+  },
+  "python_developer": {
+    "title": "Python Developer",
+    "summary": "This is a full-time on-site role for a Python Developer.",
+    "responsibilities": [
+      "Develop and maintain Python applications and services.",
+      "Write clean, efficient, and maintainable code following best practices.",
+      "Collaborate with team members to design and implement new features.",
+      "Debug and fix issues in existing codebase."
+    ],
+    "qualifications": [
+      "Bachelor's degree in Computer Science or related field.",
+      "3+ years of experience in Python development.",
+      "Strong knowledge of Python frameworks (Django, Flask, FastAPI).",
+      "Experience with databases (PostgreSQL, MySQL, MongoDB).",
+      "Familiarity with version control systems (Git) and CI/CD pipelines.",
+      "Knowledge of RESTful APIs and microservices architecture."
+    ]
+  }
+} 
